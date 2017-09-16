@@ -1,29 +1,22 @@
-/* The Fibonacci sequence is a series where the next term is the sum of pervious two terms
-	without recursion */
-   
-public class Fibonacci{
-
-    static int no = 0, n = 10;        
-
+/* Recursive Fibonacci Series Program in Java */
+public class Fibonacci {
+    
     public static void main(String[] args) 
 	{
-      						 // By using function(it prints till 8)
-        fib(0, 1);
+        
+        long limit = 20;
+        for(long i =1; i <=limit;i++) 
+		{
+            System.out.print(fibonacci(i)+", ");
         }
-
-    public static void fib(int a, int b) {      // passing two parametres as a and b
-       						// Terminating condition.
-        if (a >= n)
-	 {
-            return;
-         }
-
-      else {
-            System.out.print("\t" + no);      
-            no = a + b;
-            a = b;
-            b = no;
-            fib(a, b);
-            }
+        
+        
     }
-} 
+    
+    public static long fibonacci(long n) {
+        if(n<=2) 
+			return n-1;
+        return fibonacci(n-1)+fibonacci(n-2);
+    }
+    
+}
